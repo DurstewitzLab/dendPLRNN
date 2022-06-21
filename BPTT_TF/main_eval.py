@@ -14,7 +14,7 @@ from evaluation import klx
 from bptt import models
 from evaluation.pse import power_spectrum_error, power_spectrum_error_per_dim
 
-EPOCH = 5
+EPOCH = None
 SKIP_TRANS = 0
 PRINT = True
 SMOOTHING = 20
