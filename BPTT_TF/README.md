@@ -37,7 +37,7 @@ To evaluate metrics on the test set, call `main_eval.py` with the corresponding 
 Finally, the jupyter notebook `example.ipynb` contains code that loads a trained model and plots trajectories, where `model_path` and `data_path` have to be set by the user.
 
 ### <u>Reproducing Table S2</u>
-...
+Similarly, `Experiments/TableS2` contains experiment setups to reproduce vanilla PLRNN results trained with BPTT+TF (see Table S2 in the paper).
 
 
 
