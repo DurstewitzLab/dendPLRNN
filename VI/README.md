@@ -40,6 +40,11 @@ e.g. args.append(Argument('dim_z', [5, 6], add_to_name_as='z')) will test for di
 - n_runs gives the number of runs per settings.
 - n_cpu selects the number of cpu's used.
 
+## ubermain_eval
+
+- The ubermain_eval file allows automated parallelized evaluation of models by searching through the evaluation directory for models.
+- Metrics that can be selected are "klx": the KL divergence between data density in state space, computed by a binning method, "klx_gmm": the Gaussian mixture model approximation of the KL measure for high-dimensional state spaces, "klz": the KL divergence between the approximate posterior distribution and latent distribution sampled from the PLRNN, "mse": an averaged N step ahead prediction error, "psc": power spectrum correlation
+
 ## Requirements 
 conda install pytorch
 conda install pandas
