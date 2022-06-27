@@ -1,7 +1,7 @@
 # SVAE
 
 Sequential Variational Autoencoder (SVAE) to infer parameters for the dendritic Piece-wise Linear Recurrent Neural Network (dendPLRNN) model by [Brenner, Hess, 2022].
-Data input needs to be a numpy file with shape (N, T, dim_x), where N is the number of trials, and T the number of time steps per sequence.
+Data input needs to be a numpy file with shape (N, T, dim_x), where N is the number of trials/batches, and T the number of time steps per sequence.
 
 
 ## Arguments:
@@ -13,11 +13,11 @@ Data input needs to be a numpy file with shape (N, T, dim_x), where N is the num
 - eval (bool): evaluate models in terms of ahead prediction MSE, KLx, and KLz
 - eval_dir: directory in which recursively all models will be searched and eval results gathered 
 
-- dim_z: latent variable number
-- n_bases: number of bases for bases expansion of latent transition equation, if it is *None*,  defaults to standard PLRNN formulation
+- dim_z: dimension of latent space
+- n_bases: number of bases for dendritic basis expansion, if it is *None*,  defaults to standard PLRNN formulation
 - clip_range: clip the latent states to a specified maximum and minimum value
 - rec_model: recognition model type
-  dc: diagonal covariance, cnn: convolutional network, sap: structured approximate posterior, pog: product of gaussians, pogr: product of gaussians
+  dc: (linear layer) diagonal covariance, cnn: convolutional neural network
 
 - annealing ['lin', 'quad', 'exp', 'const']
     arguments to annealing should be given as list:
@@ -33,14 +33,12 @@ Data input needs to be a numpy file with shape (N, T, dim_x), where N is the num
     e.g. if [[0.5, 1.], [0.3, 0.1]] and the total number of states is 10,
     then 5 states are regularized with strength 1.0 and 3 states with strength 0.1 and 2 are not regularized
 
-
 ## ubermain
 
 - The ubermain file allows parallel scanning over ranges of hyperparameters. Specify the argument choices to be tested in list format:
 e.g. args.append(Argument('dim_z', [5, 6], add_to_name_as='z')) will test for dimensions 5 and 6 and save experiments under z5 and z6.
 - n_runs gives the number of runs per settings.
 - n_cpu selects the number of cpu's used.
-
 
 ## Requirements 
 conda install pytorch
