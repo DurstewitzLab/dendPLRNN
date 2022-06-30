@@ -130,13 +130,14 @@ class Model(nn.Module):
         return state_dict
 
     @tc.no_grad()
-    def generate_free_trajectory(self, data, T, z0=None):
+    def generate_free_trajectory(self, data: tc.Tensor, T: int,
+                                 z0: tc.Tensor = None):
         B = None
         # teacher forcing with obs. model inversion
         if self.args['use_inv_tf']:
             B = self.output_layer.weight
         # optionally predict an initial z0 of shape (1, dz)
-        if self.z0_model:
+        if self.z0_model and z0 is None:
             z0 = self.z0_model(data[0, :].unsqueeze(0))
         # latent traj is T x dz
         latent_traj = self.latent_model.generate(T, data, z0, B)
