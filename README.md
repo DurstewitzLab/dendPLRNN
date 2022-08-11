@@ -9,7 +9,23 @@ The repository is split into two codebases providing different approaches to the
 ## Citation
 If you find the repository and/or paper helpful for your own research, please consider citing our work:
 ```
-@article ...
+
+@InProceedings{pmlr-v162-brenner22a,
+  title = 	 {Tractable Dendritic {RNN}s for Reconstructing Nonlinear Dynamical Systems},
+  author =       {Brenner, Manuel and Hess, Florian and Mikhaeil, Jonas M and Bereska, Leonard F and Monfared, Zahra and Kuo, Po-Chen and Durstewitz, Daniel},
+  booktitle = 	 {Proceedings of the 39th International Conference on Machine Learning},
+  pages = 	 {2292--2320},
+  year = 	 {2022},
+  editor = 	 {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},
+  volume = 	 {162},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {17--23 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v162/brenner22a/brenner22a.pdf},
+  url = 	 {https://proceedings.mlr.press/v162/brenner22a.html},
+  abstract = 	 {In many scientific disciplines, we are interested in inferring the nonlinear dynamical system underlying a set of observed time series, a challenging task in the face of chaotic behavior and noise. Previous deep learning approaches toward this goal often suffered from a lack of interpretability and tractability. In particular, the high-dimensional latent spaces often required for a faithful embedding, even when the underlying dynamics lives on a lower-dimensional manifold, can hamper theoretical analysis. Motivated by the emerging principles of dendritic computation, we augment a dynamically interpretable and mathematically tractable piecewise-linear (PL) recurrent neural network (RNN) by a linear spline basis expansion. We show that this approach retains all the theoretically appealing properties of the simple PLRNN, yet boosts its capacity for approximating arbitrary nonlinear dynamical systems in comparatively low dimensions. We employ two frameworks for training the system, one combining BPTT with teacher forcing, and another based on fast and scalable variational inference. We show that the dendritically expanded PLRNN achieves better reconstructions with fewer parameters and dimensions on various dynamical systems benchmarks and compares favorably to other methods, while retaining a tractable and interpretable structure.}
+}
+
 ```
 
 ## Acknowledgements
