@@ -7,7 +7,7 @@ This repository provides the code to the paper **Tractable Dendritic RNNs for Re
 The repository is split into two codebases providing different approaches to the estimation of parameters of the dendritic, piecewise linear recurrent neural network (dendPLRNN). The folder `BPTT_TF` contains the codebase using backpropagation through time (BPTT) based training paired with sparse teacher forcing (TF), whereas `VI` embeds the dendPLRNN in a variational inference (VI) framework in the form of a sequential variational autoencoder (SVAE). All code is written in Python using [PyTorch](https://pytorch.org/) as the main deep learning framework.
 
 ## Citation
-If you find the repository and/or paper helpful for your own research, please consider citing our work:
+If you find the repository and/or paper helpful for your own research, please consider citing [our work](https://proceedings.mlr.press/v162/brenner22a.html):
 ```
 
 @InProceedings{pmlr-v162-brenner22a,
